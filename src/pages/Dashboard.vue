@@ -17,7 +17,7 @@ import target from './Dashboard/Targetcharts.vue';
 
 <style lang="scss" scoped>
 .container1{
-  width: 82vw;
+  width: 1575px;
   height: 300px;
   // background-color: pink;
   margin-top: 10px;

@@ -161,7 +161,7 @@ function init() {
 
 <style lang="scss" scoped>
 .container {
-  width: 82vw;
+  width: 1550px;
   // height: 85vh;
   // background-color: pink;
   box-sizing: border-box;
@@ -247,13 +247,13 @@ function init() {
   }
 
   .visitor {
-    width: 38vw;
+    width: 750px;
     height: 300px;
     background-color: #fff;
     border-radius: 20px;
     padding: 20px;
     box-sizing: border-box;
-
+    margin-left: 35px;
     #main {
 
       width: 700px;

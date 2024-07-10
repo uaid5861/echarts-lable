@@ -84,7 +84,7 @@ const dialogTitle = ref('');
 const dialogMode = ref('');
 const currentUser = reactive({ avatar: '', id: '', date: '', name: '', address: '', state: '', bili: '' });
 
-const openDialog = (user, mode) => {
+const openDialog = (user: any, mode: any) => {
   Object.assign(currentUser, user);
   dialogMode.value = mode;
   dialogTitle.value = mode === 'view' ? '查看用户信息' : '编辑用户信息';
