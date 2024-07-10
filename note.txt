@@ -1,0 +1,259 @@
+function init() {
+  // 基于准备好的dom，初始化echarts实例
+  let Chart = echarts.init(document.getElementById("main"));
+  // 绘制图表
+  let options = {
+    title: {
+      text: "ECharts 入门示例",
+    },
+    tooltip: {},
+    xAxis: {
+      data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"],
+    },
+    yAxis: {},
+    series: [
+      {
+        name: "销量",
+        type: "bar",
+        data: [5, 20, 36, 10, 10, {
+          value: 43,
+          // 设置单个柱子的样式
+          itemStyle: {
+            color: '#91cc75',
+            shadowColor: '#91cc75',
+            borderType: 'dashed',
+            opacity: 0.5
+          }
+        }
+      ],
+      itemStyle: {
+        barBorderRadius: 20,
+        // borderWidth: 1,
+        // borderType: 'solid',
+        // borderColor: '#73c0de',
+        // shadowColor: '#5470c6',
+        shadowBlur: 3
+      }
+      },
+    ],
+  };
+
+  // 渲染第一个图表
+  Chart.setOption(options);
+
+  // 获取所有带有类名 "bing" 的元素并初始化 ECharts
+  let bingElements = document.getElementsByClassName("bing");
+  for (let element of bingElements) {
+    let bingChart = echarts.init(element);
+    let bings = {
+      legend: {
+        orient: 'vertical',
+        x: 'left',
+        data: ['A', 'B', 'C', 'D', 'E']
+      },
+      series: [
+        {
+          type: 'pie',
+          radius: ['50%', '70%'],
+          avoidLabelOverlap: false,
+          label: {
+            show: false,
+            position: 'center'
+          },
+          labelLine: {
+            show: false
+          },
+          emphasis: {
+            label: {
+              show: true,
+              fontSize: '30',
+              fontWeight: 'bold'
+            }
+          },
+          data: [
+            { value: 335, name: 'A' },
+            { value: 310, name: 'B' },
+            { value: 234, name: 'C' },
+            { value: 135, name: 'D' },
+            { value: 1548, name: 'E' }
+          ]
+        }
+      ]
+    };
+    bingChart.setOption(bings);
+  }
+}
+
+<script setup>
+import * as echarts from "echarts";
+import { onMounted, ref, watchEffect } from "vue";
+
+const pieData = ref([
+  { value: 355, name: 'A' },
+  { value: 310, name: 'B' },
+  { value: 234, name: 'C' },
+  { value: 135, name: 'D' },
+  { value: 154, name: 'E' }
+]);
+
+
+//声明周期函数，自动执行初始化
+onMounted(() => {
+  init();
+
+  watchEffect(() => {
+    init();
+  });
+  setInterval(() => {
+    generateRandomData();
+  }, 3000);
+});
+
+function generateRandomData() {
+  // 生成随机销售数据
+
+  // 生成随机饼图数据
+  pieData.value = [
+    { value: Math.floor(Math.random() * 500), name: 'A' },
+    { value: Math.floor(Math.random() * 500), name: 'B' },
+    { value: Math.floor(Math.random() * 500), name: 'C' },
+    { value: Math.floor(Math.random() * 500), name: 'D' },
+    { value: Math.floor(Math.random() * 500), name: 'E' }
+  ];
+}
+//初始化函数
+function init() {
+  // 基于准备好的dom，初始化echarts实例
+  let Chart = echarts.init(document.getElementById("main"));
+  // 绘制图表
+  let options = {
+    title: {
+      text: "ECharts 入门示例",
+    },
+    tooltip: {},
+    xAxis: {
+      splitLine:{show:false},
+      axisTick:{show:false},
+      data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"],
+    },
+    yAxis: {
+      splitLine:{show:false},
+      axisTick: {		//x轴刻度线
+	show:false
+},
+axisLabel:{ show: false }, //显示x轴的数值
+    },
+    series: [
+      {
+        name: "销量",
+        type: "bar",
+        data: [5, 20, 36, 10, 10, {
+          value: 43,
+          // 设置单个柱子的样式
+          itemStyle: {
+            color: '#91cc75',
+            shadowColor: '#91cc75',
+            borderType: 'dashed',
+            opacity: 0.5
+          }
+        }
+      ],
+      itemStyle: {
+        borderRadius: [20,20,0,0],
+        // borderWidth: 1,
+        // borderType: 'solid',
+        // borderColor: '#73c0de',
+        // shadowColor: '#5470c6',
+        shadowBlur: 3
+      }
+      },
+    ],
+  };
+  let bing = echarts.init(document.getElementById("bing"));
+  let bings = {
+  legend: {
+    orient: 'horizontal',
+    x: '540',
+    y: 'bottom',
+    data: ['A', 'B', 'C', 'D', 'E'],
+   
+  },
+  series: [
+    {  
+      // legend:{bottom:auto},
+      type: 'pie',
+      radius: ['50%', '70%'],
+      avoidLabelOverlap: true,
+      label: {
+        show: true,
+        position: 'center'
+      },
+      itemStyle: {
+        borderRadius: 20,
+        borderColor: '#fff',
+        borderWidth: 2
+      },
+      labelLine: {
+        show: true
+      },
+      emphasis: {
+        label: {
+          show: true,
+          fontSize: '40',
+          fontWeight: 'bold'
+        }
+      },
+      data: pieData.value
+    }
+  ]
+};
+
+  // 渲染图表
+  Chart.setOption(options);
+  bing.setOption(bings)
+}
+</script>
+
+<template>
+<div id="main"></div>
+<div class="container">
+  <div id="bing"></div>
+</div>
+
+</template>
+
+<style lang="scss" scoped>
+#main {
+  width: 80vw;
+  height: 80vh;
+}
+.container{
+  margin-left: 20px;
+  width: 20vw;
+  height: 50vh;
+  background-color: antiquewhite;
+  border-radius: 3px;
+  // padding-top: ;
+  box-sizing: border-box;
+  // line-height: 30vh;
+
+  #bing {
+    // margin-top: 10vh;
+    margin-left: 1;
+  width: 20vw;
+  height: 20vh;
+}
+}
+.box0{
+  width: 100px;
+  height: 20px;
+  background-color: pink;
+  font-size: 2px;
+}
+.box{
+  width: 10rem;
+  height: 5rem;
+  background-color: antiquewhite;
+  font-size: .1rem;
+}
+</style>
