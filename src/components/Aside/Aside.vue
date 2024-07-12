@@ -78,7 +78,16 @@
                                 d="M4 16H6.66667V28H4V16ZM25.3333 10.6667H28V28H25.3333V10.6667ZM14.6667 2.66666H17.3333V28H14.6667V2.66666Z"
                                 fill="#737791" />
                         </svg>
-                        <div class="routebtn">Leaderboard</div>
+                        <div class="routebtn">Manner</div>
+                    </router-link>
+                    <router-link to="/home/message" class="routeclass" active-class="active">
+                        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M26.6667 2.66666H5.33335C3.86669 2.66666 2.66669 3.86666 2.66669 5.33333V29.3333L8.00002 24H26.6667C28.1334 24 29.3334 22.8 29.3334 21.3333V5.33333C29.3334 3.86666 28.1334 2.66666 26.6667 2.66666ZM26.6667 21.3333H6.93335L5.33335 22.9333V5.33333H26.6667V21.3333ZM22.6667 14.6667H20V12H22.6667V14.6667ZM17.3334 14.6667H14.6667V12H17.3334V14.6667ZM12 14.6667H9.33335V12H12"
+                                fill="#737791" />
+                        </svg>
+
+                        <div class="routebtn">Message</div>
                     </router-link>
                     <router-link to="/home/order" class="routeclass" active-class="active">
                         <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -108,15 +117,7 @@
 
                         <div class="routebtn">Sales Report</div>
                     </router-link>
-                    <router-link to="/home/message" class="routeclass" active-class="active">
-                        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M26.6667 2.66666H5.33335C3.86669 2.66666 2.66669 3.86666 2.66669 5.33333V29.3333L8.00002 24H26.6667C28.1334 24 29.3334 22.8 29.3334 21.3333V5.33333C29.3334 3.86666 28.1334 2.66666 26.6667 2.66666ZM26.6667 21.3333H6.93335L5.33335 22.9333V5.33333H26.6667V21.3333ZM22.6667 14.6667H20V12H22.6667V14.6667ZM17.3334 14.6667H14.6667V12H17.3334V14.6667ZM12 14.6667H9.33335V12H12"
-                                fill="#737791" />
-                        </svg>
-
-                        <div class="routebtn">Message</div>
-                    </router-link>
+                   
                 </div>
             </div>
         </div>

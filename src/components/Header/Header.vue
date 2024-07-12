@@ -64,7 +64,7 @@ const state = reactive({
     'none',
     'scale-down',
   ],
-  url: 'https://picture.gptkong.com/20240605/2256cb0f6f10b14f16b678ddc19de7e4b0.jpeg',
+  url: 'https://picture.gptkong.com/20240712/23424e3fbf75a7425fa8fe2264387b08b9.jpeg',
 })
 const { url } = toRefs(state)
 
