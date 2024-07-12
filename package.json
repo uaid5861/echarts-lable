@@ -7,12 +7,13 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-     "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
     "@types/node": "^20.14.2",
     "amfe-flexible": "^2.2.1",
+    "colorthief": "^2.4.0",
     "echarts": "^5.5.0",
     "element-plus": "^2.7.5",
     "postcss-pxtorem": "^6.1.0",
